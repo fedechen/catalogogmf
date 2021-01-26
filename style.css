@@ -24,12 +24,12 @@ body {
 
 .left {
   left: 0;
-  background-color: #111;
+  background-color: #bbb;
 }
 
 .right {
   right: 0;
-  background-color: red;
+  background-color: #ccc;
 }
 
 .centered {
