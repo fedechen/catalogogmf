@@ -221,6 +221,52 @@ a:active {
   background-color: RosyBrown;
   color: white;
 }
+/** BUSCA **/
+
+.container-busca {
+  background-color: #bbb;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
+}
+
+.busca-row {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  max-width: 1000px;
+}
+
+.input-busca {
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+}
+
+.button-busca {
+  background-color: #666;
+  color: white;
+  width: 100pt;
+  height: 32pt;
+  outline: none;
+}
+
+#containerResultados {
+  background-color: #ccc;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 90%;
+  max-width: 984px;
+  margin-top: 16pt;
+  padding: 8px;
+}
+
+#containerResultados a:link {
+  color: blue !important;
+}
 
 
    
