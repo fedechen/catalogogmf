@@ -50,7 +50,7 @@ function busca() {
       console.log(res.doc.id);
       $("#containerResultados").append(
         "<a href=" +
-          encodeURI(res.doc.id) +
+          res.doc.id.replaceAll(" ", "%20") +
           ">" +
           res.doc.title.substring(0, RESULT_STRING_TITLE_LENGTH) +
           "</a>"
