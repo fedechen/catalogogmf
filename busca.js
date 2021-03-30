@@ -47,9 +47,10 @@ function busca() {
     $("#containerResultados").append("<p>Nenhum resultado.</p>");
   } else {
     results.forEach((res) => {
+      console.log(res.doc.id);
       $("#containerResultados").append(
         "<a href=" +
-          res.doc.id +
+          encodeURI(res.doc.id) +
           ">" +
           res.doc.title.substring(0, RESULT_STRING_TITLE_LENGTH) +
           "</a>"

@@ -45,7 +45,6 @@ body {
   border-radius: 50%;
 }
 
-
 .collapsible {
   background-color: #666;
   font-weight: bold;
@@ -73,15 +72,17 @@ body {
 }
 
 .icon-left {
- text-align: right;
- padding: 25px;
+  text-align: right;
+  padding: 25px;
 }
 
-.active, .collapsible:hover {
+.active,
+.collapsible:hover {
   background-color: #555;
 }
 
-.active, .collapsible2:hover {
+.active,
+.collapsible2:hover {
   background-color: #555;
 }
 .content {
@@ -125,12 +126,12 @@ a:active {
   text-decoration: underline;
 }
 
- .card-image1 {
+.card-image1 {
   grid-area: image;
   background: url("images/realizacao-verde.png");
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-   border-bottom-left-radius: 15px;
+  border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 .card-image2 {
@@ -138,7 +139,7 @@ a:active {
   background: url("images/att-orange.png");
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-   border-bottom-left-radius: 15px;
+  border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 .card-image3 {
@@ -146,7 +147,7 @@ a:active {
   background: url("images/suporte.png");
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-   border-bottom-left-radius: 15px;
+  border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 .card-image4 {
@@ -154,7 +155,7 @@ a:active {
   background: url("images/relacionamento.png");
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-   border-bottom-left-radius: 15px;
+  border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 .card-image5 {
@@ -162,12 +163,11 @@ a:active {
   background: url("images/expressar.png");
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-   border-bottom-left-radius: 15px;
+  border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 
-
- .card-stats2 {
+.card-stats2 {
   grid-area: stats2;
   background: LightBlue;
   color: black;
@@ -177,10 +177,9 @@ a:active {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   background-size: cover;
+}
 
-   }
- 
- .card {
+.card {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 200px auto auto;
@@ -189,7 +188,7 @@ a:active {
   border-radius: 18px;
   background: white;
   font: black;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
   font-family: roboto;
   text-align: center;
 }
@@ -202,15 +201,14 @@ a:active {
 
 .card-text p {
   color: black;
-  font-size:15px;
+  font-size: 15px;
   font-weight: 300;
 }
 .card-text h2 {
-  color: #6495ED;
-  margin-top:0px;
-  font-size:28px;
+  color: #6495ed;
+  margin-top: 0px;
+  font-size: 28px;
 }
-
 
 /* Add an active class to the active dropdown button */
 .active {
@@ -221,6 +219,7 @@ a:active {
   background-color: RosyBrown;
   color: white;
 }
+
 /** BUSCA **/
 
 .container-busca {
@@ -267,7 +266,3 @@ a:active {
 #containerResultados a:link {
   color: blue !important;
 }
-
-
-   
-
