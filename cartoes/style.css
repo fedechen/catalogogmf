@@ -1,0 +1,236 @@
+body {
+  font-family: Arial;
+  color: white;
+}
+
+.split30 {
+  height: 100%;
+  width: 30%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.split70 {
+  height: 100%;
+  width: 70%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color: #bbb;
+}
+
+.right {
+  right: 0;
+  background-color: #ccc;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.centeredIm {
+  text-align: center;
+}
+
+
+.collapsible {
+  background-color: #666;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 17px;
+}
+
+.collapsible2 {
+  background-color: gray;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 17px;
+}
+
+.icon-left {
+ text-align: right;
+ padding: 25px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.active, .collapsible2:hover {
+  background-color: #555;
+}
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  color: black;
+  background-color: #f1f1f1;
+}
+.content-btn {
+  display: none;
+  overflow: hidden;
+  color: black;
+  background-color: gray;
+}
+.content-btn2 {
+  display: none;
+  overflow: hidden;
+  color: black;
+  background-color: gray;
+}
+a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+ .card-image1 {
+  grid-area: image;
+  background: url("../images/realizacao-verde.png");
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+   border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.card-image2 {
+  grid-area: image;
+  background: url("../images/att-orange.png");
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+   border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.card-image3 {
+  grid-area: image;
+  background: url("../images/suporte.png");
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+   border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.card-image4 {
+  grid-area: image;
+  background: url("../images/relacionamento.png");
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+   border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.card-image5 {
+  grid-area: image;
+  background: url("../images/expressar.png");
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+   border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+
+ .card-stats2 {
+  grid-area: stats2;
+  background: LightBlue;
+  color: black;
+  height: auto;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-size: cover;
+  padding-top: 30px;
+
+   }
+ 
+ .card {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 200px auto auto;
+  grid-template-areas: "image" "text" "stats2";
+
+  border-radius: 18px;
+  background: white;
+  font: black;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+  font-family: roboto;
+  text-align: center;
+}
+
+.card-text {
+  color: black;
+  grid-area: text;
+  margin: 25px;
+ 
+}
+
+.card-text p {
+  color: black;
+  font-size:15px;
+  font-weight: 300;
+}
+.card-text h2 {
+  color: #6495ED;
+  margin-top:0px;
+  font-size:28px;
+}
+
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: DarkSeaGreen;
+  color: white;
+}
+.active2 {
+  background-color: RosyBrown;
+  color: white;
+}
+div.c {
+  font-size: 120%;
+  font-weight: bold;
+}
+
+
+   
+
