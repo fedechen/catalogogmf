@@ -46,7 +46,8 @@ body {
 }
 
 .centeredIm {
-  text-align: center;
+  text-align: left;
+  margin: 50px;
 }
 
 
@@ -181,7 +182,7 @@ a:active {
   border-bottom-right-radius: 15px;
   background-size: cover;
   padding-top: 30px;
-
+  
    }
  
  .card {
@@ -195,14 +196,14 @@ a:active {
   font: black;
   box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
   font-family: roboto;
-  text-align: center;
+  text-align: left;
 }
 
 .card-text {
   color: black;
   grid-area: text;
-  margin: 25px;
- 
+  margin: 50px;
+ text-align: left;
 }
 
 .card-text p {
