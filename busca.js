@@ -65,7 +65,7 @@ function busca() {
   let index = filtraCategorias();
 
   let results = index.search(inputValue);
-
+ 
   $("#containerResultados").empty();
 
   //mapear os resultados no HTML
@@ -78,11 +78,11 @@ function busca() {
 
       $("#containerResultados").append("<h2>" + res.doc.category + "</h2>");
       $("#containerResultados").append(
-        "<a href=" +
+        "<h2><a href=cartoes/"+
           res.doc.id.replaceAll(" ", "%20") +
           ">" +
           res.doc.title.substring(0, RESULT_STRING_TITLE_LENGTH) +
-          "</a>"
+          "</a></h2>"
       );
 
       $("#containerResultados").append(
