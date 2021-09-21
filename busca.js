@@ -1,74 +1,63 @@
 const RESULT_STRING_BODY_LENGTH = 200;
 const RESULT_STRING_TITLE_LENGTH = 75;
 
-const CATEGORIES = [
-  'Atratividade',
-  'Suporte a Tarefa',
-  'Motivação por Realização',
-  'Motivação por Expressão',
-  'Motivação por Relacionamento',
-]
-
-
-//-------------------------------------- Carregar todos os Indexados e armazenar globalmente
-let indexados = [];
+var index = elasticlunr(function () {
+  this.addField("title");
+  this.addField("category");
+  this.addField("body");
+  this.setRef("id");
+});
 
 fetch("indexados.json")
   .then(function (response) {
     return response.json();
   })
   .then(function (json) {
-    indexados = json;
-  });
-//--------------------------------------
-
-
-//-------------------------------------- Definir a função que filtra as categorias a serem adicionadas no index
-function filtraCategorias() {
-  var index = elasticlunr(function () {
-    this.addField("title");
-    // this.addField("category");
-    this.addField("body");
-    this.setRef("id");
-  });
-
-  let selectedCategories = []
-
-  //localizar (do html) todos os checkbox com id iniciando em "checkboxCategory"
-  let checkboxes = $('[id^="checkboxCategory"]');
-
-  //filtrar as categorias de acordo com o estado do checkbox
-  checkboxes.each( (index, cb) => {
-    categoryIndex = $(cb).attr("index");
-    categoryName = CATEGORIES[categoryIndex];
-    categoryIsChecked = $(cb).prop("checked");
-
-    if(categoryIsChecked) selectedCategories.push(categoryName)
-  })
-
-  //adicionar ao "selectedCategories" somente as que estiverem selecionadas
-  indexados.forEach((doc) => {
-    if( selectedCategories.includes(doc.category) ){
+    json.forEach((doc) => {
       index.addDoc(doc);
-    }
+    });
   });
 
-  return index;
+//  ---- EXEMPLO DE USO DA BIBLIOTECA ----
+
+// var doc1 = {
+//   id: "www.google.com",
+//   title: "Oracle released its latest database Oracle 12g",
+//   body:
+//     "Yestaday Oracle has released its new database Oracle 12g, this would make more money for this company and lead to a nice profit report of annual year.",
+// };
+
+// var doc2 = {
+//   id: "http://test/sasd",
+//   title: "Oracle released its profit report of 2015",
+//   body:
+//     "As expected, Oracle released its profit report of 2015, during the good sales of database and hardware, Oracle's profit of 2015 reached 12.5 Billion.",
+// };
+
+// index.addDoc(doc1);
+// index.addDoc(doc2);
+//--------- TESTE
+var tempResults;
+function searchOneWord(w) {
+  tempResults = index.search(w);
+  console.log(tempResults);
 }
-//--------------------------------------
-
-
-//-------------------------------------- Função executada pelo botão "Busca"
+// --------- /TESTE
 function busca() {
   let inputValue = $("#inputBusca").val();
+  //--------- TESTE
+  var words = inputValue.split(" ");
+  words.forEach((w) => {
+    //aqui chamo o searchOneWord
 
-  let index = filtraCategorias();
+    searchOneWord(w);
+  });
+  //----------/TESTE
 
   let results = index.search(inputValue);
- 
+
   $("#containerResultados").empty();
 
-  //mapear os resultados no HTML
   if (results.length == 0) {
     $("#containerResultados").append("<p>Nenhum resultado.</p>");
   } else {
@@ -78,11 +67,11 @@ function busca() {
 
       $("#containerResultados").append("<h2>" + res.doc.category + "</h2>");
       $("#containerResultados").append(
-        "<h2><a href=cartoes/"+
+        "<a href=" +
           res.doc.id.replaceAll(" ", "%20") +
           ">" +
           res.doc.title.substring(0, RESULT_STRING_TITLE_LENGTH) +
-          "</a></h2>"
+          "</a>"
       );
 
       $("#containerResultados").append(
@@ -93,21 +82,8 @@ function busca() {
     });
   }
 }
-//--------------------------------------
 
-
-//-------------------------------------- Inicialização da página
 $(window).on("load", function () {
-
-  CATEGORIES.forEach( (category, index) => {
-    let id = 'checkboxCategory'+index;
-
-    $("#inputCategories").append(
-      `<input type="checkbox" id="${id}" name="${id}" index="${index}"/>
-       <label for="${id}">${category}</label>`
-    )
-  })
-  
   $("#buttonBusca").on("click", () => {
     busca();
   });
@@ -116,4 +92,3 @@ $(window).on("load", function () {
     if (e.which === 13) busca();
   });
 });
-//--------------------------------------
